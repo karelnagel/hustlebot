@@ -9,10 +9,10 @@ export default function App() {
       <h1>My Bots</h1>
       <div>
         {bots?.map((bot) => (
-          <div key={bot.id}>
+          <Link href={`/bots/${bot.id}`} key={bot.id}>
             <h2>{bot.name}</h2>
             {bot.image && <img src={bot.image} alt="" />}
-          </div>
+          </Link>
         ))}
         <Link href="/bots/new" className="btn-primary btn">
           Create new
