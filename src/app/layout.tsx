@@ -3,6 +3,7 @@ import { TRPCProvider } from "../providers/TRPCProvider";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { getServerSession } from "next-auth";
+import { Header } from "~/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 export default async function RootLayout({
@@ -15,7 +16,8 @@ export default async function RootLayout({
     <html lang="en">
       <AuthProvider session={session}>
         <TRPCProvider>
-          <body  style={inter.style}>
+          <body style={inter.style}>
+            <Header />
             {children}
           </body>
         </TRPCProvider>

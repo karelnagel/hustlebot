@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Bot" ALTER COLUMN "image" DROP NOT NULL,
+ALTER COLUMN "companyDescription" DROP NOT NULL,
+ALTER COLUMN "companyName" DROP NOT NULL;

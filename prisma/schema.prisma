@@ -55,6 +55,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    bots          Bot[]
 }
 
 model VerificationToken {
@@ -68,12 +69,14 @@ model VerificationToken {
 model Bot {
     id                 String   @id @default(cuid())
     name               String
-    image              String
-    companyDescription String
+    image              String?
+    companyDescription String?
     website            String
-    companyName        String
+    companyName        String?
     contactEmail       String?
     contactPhone       String?
+    userId             String
+    user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     createdAt          DateTime @default(now())
     updatedAt          DateTime @updatedAt
 }
